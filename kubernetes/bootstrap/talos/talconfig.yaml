@@ -29,19 +29,24 @@ nodes:
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:a2:fd:cb"
-        vlans:
-          - vlanId: 13
-            addresses:
-              - "10.10.13.111/24"
-            mtu: 1500
-            routes:
-              - network: 0.0.0.0/0
-                gateway: "10.10.13.1"
-            vip:
-              ip: "10.10.13.10"
+        dhcp: false
+        addresses:
+          - "10.10.13.111/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
+        vip:
+          ip: "10.10.13.10"
 
 # Global patches
 patches:
+  - # Force nameserver
+    |-
+    machine:
+      network:
+        nameservers:
+          - 10.10.13.5 10.10.13.6
   - "@./patches/global/cluster-discovery.yaml"
   - "@./patches/global/containerd.yaml"
   - "@./patches/global/disable-search-domain.yaml"
