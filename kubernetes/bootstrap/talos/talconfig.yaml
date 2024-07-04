@@ -21,11 +21,92 @@ cniConfig:
   name: none
 
 nodes:
+  - hostname: "tal-01"
+    ipAddress: "10.10.13.111"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:a2:fd:cb"
+        dhcp: false
+        addresses:
+          - "10.10.13.111/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
+        vip:
+          ip: "10.10.13.10"
+  - hostname: "tal-02"
+    ipAddress: "10.10.13.112"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:b5:e8:de"
+        dhcp: false
+        addresses:
+          - "10.10.13.112/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
+        vip:
+          ip: "10.10.13.10"
+  - hostname: "tal-03"
+    ipAddress: "10.10.13.113"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: true
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:38:c1:e0"
+        dhcp: false
+        addresses:
+          - "10.10.13.113/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
+        vip:
+          ip: "10.10.13.10"
+  - hostname: "tal-wkr-01"
+    ipAddress: "10.10.13.121"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: false
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:a2:50:5a"
+        dhcp: false
+        addresses:
+          - "10.10.13.121/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
+  - hostname: "tal-wkr-02"
+    ipAddress: "10.10.13.122"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    controlPlane: false
+    networkInterfaces:
+      - deviceSelector:
+          hardwareAddr: "bc:24:11:9c:64:67"
+        dhcp: false
+        addresses:
+          - "10.10.13.122/24"
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "10.10.13.1"
+        mtu: 9000
   - hostname: "tal-wkr-03"
     ipAddress: "10.10.13.123"
     installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
-    controlPlane: true
+    controlPlane: false
     networkInterfaces:
       - deviceSelector:
           hardwareAddr: "bc:24:11:b1:81:1e"
@@ -36,8 +117,6 @@ nodes:
           - network: 0.0.0.0/0
             gateway: "10.10.13.1"
         mtu: 9000
-        vip:
-          ip: "10.10.13.10"
 
 # Global patches
 patches:
