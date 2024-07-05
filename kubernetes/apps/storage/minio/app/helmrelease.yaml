@@ -71,9 +71,9 @@ spec:
     defaultPodOptions:
       securityContext:
         runAsNonRoot: true
-        runAsUser: 0
-        runAsGroup: 0
-        fsGroup: 0
+        runAsUser: 1024
+        runAsGroup: 1024
+        fsGroup: 1024
         fsGroupChangePolicy: OnRootMismatch
         supplementalGroups: [10000]
         seccompProfile: {type: RuntimeDefault}
@@ -117,6 +117,6 @@ spec:
         enabled: true
         type: nfs
         server: "192.168.1.111"
-        path: /mnt/user/k3s
+        path: /mnt/user/k3s/nfs/minio/
         globalMounts:
           - path: /data
