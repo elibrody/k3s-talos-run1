@@ -115,7 +115,7 @@ spec:
     persistence:
       config:
         type: nfs
-        server: "192.168.1.112"
+        server: "10.10.13.212"
         path: /mnt/Data/Share/k3s/minio
         globalMounts:
           - path: /data
