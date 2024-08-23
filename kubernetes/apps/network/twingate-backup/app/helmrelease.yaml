@@ -29,5 +29,5 @@ spec:
       logLevel: "info"
       network: bitbybit
       url: "twingate.com"
-      existingSecret: twingate-secret
+      existingSecret: twingatebackup-secret
       dnsServer: 10.10.13.5,10.10.13.6
