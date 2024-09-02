@@ -10,3 +10,4 @@ resources:
   - ./k8s-gateway/ks.yaml
   - ./twingate/ks.yaml
   - ./twingate-backup/ks.yaml
+  - ./unifi-dns-webhook/ks.yaml
