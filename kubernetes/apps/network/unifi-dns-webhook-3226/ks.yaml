@@ -6,7 +6,7 @@ metadata:
   name: &app unifi-dns-webhook-3226
   namespace: flux-system
 spec:
-  targetNamespace: flux-system
+  targetNamespace: network
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
