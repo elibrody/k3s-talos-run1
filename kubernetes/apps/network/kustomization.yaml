@@ -10,5 +10,5 @@ resources:
   - ./k8s-gateway/ks.yaml
   - ./twingate/ks.yaml
   - ./twingate-backup/ks.yaml
-  - ./unifi-dns-webhook/ks.yaml
-  - ./unifi-dns-webhook-3226/ks.yaml
+#  - ./unifi-dns-webhook/ks.yaml
+#  - ./unifi-dns-webhook-3226/ks.yaml
